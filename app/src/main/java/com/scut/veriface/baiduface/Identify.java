@@ -12,6 +12,7 @@ import java.net.URLEncoder;
 /**
  * 人脸查找——识别
  */
+@Deprecated
 public class Identify {
 
     /**

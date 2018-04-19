@@ -13,10 +13,11 @@
         android:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
 
     <TextView
+        android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="从人脸库中识别:"
-        android:textSize="25sp"
+        android:textSize="23sp"
         android:layout_marginLeft="30dp"
         android:layout_marginTop="10sp"/>
     <TextView

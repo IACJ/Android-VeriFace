@@ -30,8 +30,11 @@ public class PasswdUtil {
             e.printStackTrace();
             return null;
         }
-        System.out.println(properties.getProperty("aliyunPasswd"));
-        System.out.println(properties.getProperty("baiduyunPasswd"));
+        setAliyunPasswd__ak_id(properties.getProperty("aliyunPasswd__ak_id"));
+        setAliyunPasswd__ak_secret(properties.getProperty("aliyunPasswd__ak_secret"));
+
+        setBaiduyun__API_Key(properties.getProperty("baiduyun__API_Key"));
+        setBaiduyun__Secret_Key(properties.getProperty("baiduyun__Secret_Key"));
 
         return properties;
     }

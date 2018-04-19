@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-
+        PasswdUtil.init(this);
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {

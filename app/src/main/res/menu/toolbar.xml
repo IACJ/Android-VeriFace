@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/list_face"
+        android:icon="@mipmap/ic_list_face"
+        android:title="listFace"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/help"
+        android:icon="@mipmap/ic_help"
+        android:title="Help"
+        app:showAsAction="always"/>
+
+</menu>

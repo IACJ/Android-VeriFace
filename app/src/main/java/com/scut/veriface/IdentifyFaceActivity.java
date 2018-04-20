@@ -206,10 +206,15 @@ public class IdentifyFaceActivity extends AppCompatActivity {
                 showResponse("没有找到匹配");
             }else{
                 s = "";
-                int t=0;
+                int t=1;
                 for (IdentifyMvNResult.Result i : identifyMvNResult.result){
                     System.out.println("IdentifyResult : "+ i);
-                    s += t+" - 相似度 : "+String.format("%.2f",  i.scores[0])+"% : "+i.user_info+"\n";
+                    if (t!=10){
+                        s += "0"+t+". 相似度  "+String.format("%.2f",  i.scores[0])+"% : "+i.user_info+"\n";
+                    }else{
+                        s += t+". 相似度  "+String.format("%.2f",  i.scores[0])+"% : "+i.user_info+"\n";
+                    }
+
                     t++;
                 }
                 showResponse(s);
@@ -237,7 +242,7 @@ public class IdentifyFaceActivity extends AppCompatActivity {
                 canvas.drawRect(left, top, right, bottom, paint);
                 paint.setTextSize(30);
                 paint.setColor(Color.RED);
-                canvas.drawText((i)+"", left, top, paint);//使用画笔paint
+                canvas.drawText((i+1)+"", left, top, paint);//使用画笔paint
             }
         }
 

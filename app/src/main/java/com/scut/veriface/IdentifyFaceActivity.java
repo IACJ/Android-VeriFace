@@ -65,7 +65,16 @@ public class IdentifyFaceActivity extends AppCompatActivity {
         String imagePath = (String) intent.getExtras().get("IMAGE_PATH");
         group_id = intent.getStringExtra("GROUP_ID");
 
-        title.setText("从"+group_id+"人脸库中识别:");
+
+        String titleText = "unknown" ;
+
+        if ("Network_Engineer".equals(group_id)){
+            titleText="从网工库识别，Ta们可能是：";
+        }else if ("Information_Safety".equals(group_id)){
+            titleText="从信安库识别，Ta们可能是：";
+        }
+
+        title.setText(titleText);
 
         if (imageUri == null && imagePath== null){
             textView.setText("请先放入图片~~");
@@ -124,7 +133,7 @@ public class IdentifyFaceActivity extends AppCompatActivity {
             public void run() {
 
                 textView.setText(response);
-                Toast.makeText(IdentifyFaceActivity.this,response,Toast.LENGTH_LONG).show();
+                Toast.makeText(IdentifyFaceActivity.this, "识别状态已更新",Toast.LENGTH_LONG).show();
             }
         });
     }
@@ -196,10 +205,12 @@ public class IdentifyFaceActivity extends AppCompatActivity {
             if (identifyMvNResult.result_num == 0){
                 showResponse("没有找到匹配");
             }else{
-                s = "Ta们可能是 :";
+                s = "";
+                int t=0;
                 for (IdentifyMvNResult.Result i : identifyMvNResult.result){
                     System.out.println("IdentifyResult : "+ i);
-                    s += "\n"+i.user_info+"\t 相似度 : "+String.format("%.2f",  i.scores[0])+"%";
+                    s += t+" - 相似度 : "+String.format("%.2f",  i.scores[0])+"% : "+i.user_info+"\n";
+                    t++;
                 }
                 showResponse(s);
                 drawRectangles(bitmap,identifyMvNResult.result);
@@ -226,7 +237,7 @@ public class IdentifyFaceActivity extends AppCompatActivity {
                 canvas.drawRect(left, top, right, bottom, paint);
                 paint.setTextSize(30);
                 paint.setColor(Color.RED);
-                canvas.drawText((i+1)+"", left, top, paint);//使用画笔paint
+                canvas.drawText((i)+"", left, top, paint);//使用画笔paint
             }
         }
 

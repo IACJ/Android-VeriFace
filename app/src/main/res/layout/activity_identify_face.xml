@@ -17,8 +17,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="从人脸库中识别:"
-        android:textSize="23sp"
-        android:layout_marginLeft="20dp"
+        android:textSize="20sp"
+        android:layout_marginLeft="15dp"
         android:layout_marginTop="10dp"/>
 
     <LinearLayout
@@ -26,7 +26,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_gravity="center_horizontal"
-        android:layout_margin="20dp">
+        android:layout_margin="10dp">
         <ImageView
             android:id="@+id/picture"
             android:layout_width="match_parent"
@@ -40,8 +40,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="识别中，请等待……"
-        android:textSize="20sp"
-        android:layout_marginLeft="20dp"
+        android:textSize="18sp"
+        android:layout_marginLeft="15dp"
         />
 
 </LinearLayout>
